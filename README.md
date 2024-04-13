@@ -36,10 +36,12 @@ Dados disponíveis na pasta `data` no arquivo: `BicyclesRelocationData.xlsx`
 
 ## Tarefas
 
-### 1
+### 1. Formule e resolva o problema de otimização:
 
-### 2
+**a**. Escreva uma formulação matemática para resolver este problema de otimização, considerando que a capacidade total de espaço do caminhão é representada por uma constante $T$. **Defina as constantes e variáveis**, e descreva as **restrições e a função objetivo** para maximizar a soma dos lucros esperados.
 
-### 3
+### 2 .
 
-### 4
+### 3 .
+
+### 4 .
