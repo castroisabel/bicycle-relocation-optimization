@@ -38,11 +38,11 @@ Dados disponíveis na pasta `data` no arquivo: `BicyclesRelocationData.xlsx`
 
 ### 1. Formule e resolva o problema de otimização:
 
-**A**. Escreva uma formulação matemática para resolver este problema de otimização, considerando que a capacidade total de espaço do caminhão é representada por uma constante $T$. **Defina as constantes e variáveis**, e descreva as **restrições e a função objetivo** para maximizar a soma dos lucros esperados.
+**a)**. Escreva uma formulação matemática para resolver este problema de otimização, considerando que a capacidade total de espaço do caminhão é representada por uma constante $T$. **Defina as constantes e variáveis**, e descreva as **restrições e a função objetivo** para maximizar a soma dos lucros esperados.
 
 **R**: 
 
-Considere as seguintes variáveis: 
+Considere as seguintes variáveis e constantes: 
 
 $x_{i,j}$: Número de bicicletas da categoria $j$ a serem movidas da área de origem para a área de destino $i$;
 
@@ -54,17 +54,30 @@ $a_j$: Disponibilidade de bicicletas na área de origem da categoria $j$;
 
 $s_j$: Espaço que a bicicleta de categoria $j$ ocupa no caminhão.
 
-Temos uma restrição de não-negatividade:
+$l_{i,j,k}$: Lucro esperado na área de destino $i$ devido a relocação da $k$-ésima bicicleta da categoria $j$.
+
+$T$: Capacidade máxima do caminhão
+
+Considere as seguintes restrições:
+
+Não-negatividade:
 
 $x_{i,j} \geq 0$  $\forall i,j$.
 
-Seja $T$ a capacidade máxima do caminhão tal que:
+Disponibilidade de bicicletas na área de origem:
+
+$\sum_i x_{i,j} \leq a_j $.
+
+Capacidade máxima do caminhão:
 
 $\sum_i \sum_j x_{i,j} \times s_j \leq T$.
 
 A função objetivo para o problema será dada por:
 
+$\max L = \sum_{i} \sum_{j} \sum_{k} l_{i,j,k}$
 
+
+**b)** Escolha uma linguagem de programação e um solucionador (como CBC ou GLPK) para otimizar a formulação que você propõe na tarefa 1 a). Considerando a capacidade do caminhão como $T=80$, resolva o problema e mostre seu código, a solução ótima e o valor objetivo ótimo.
 
 ### 2 .
 
