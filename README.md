@@ -38,7 +38,33 @@ Dados disponíveis na pasta `data` no arquivo: `BicyclesRelocationData.xlsx`
 
 ### 1. Formule e resolva o problema de otimização:
 
-**a**. Escreva uma formulação matemática para resolver este problema de otimização, considerando que a capacidade total de espaço do caminhão é representada por uma constante $T$. **Defina as constantes e variáveis**, e descreva as **restrições e a função objetivo** para maximizar a soma dos lucros esperados.
+**A**. Escreva uma formulação matemática para resolver este problema de otimização, considerando que a capacidade total de espaço do caminhão é representada por uma constante $T$. **Defina as constantes e variáveis**, e descreva as **restrições e a função objetivo** para maximizar a soma dos lucros esperados.
+
+**R**: 
+
+Considere as seguintes variáveis: 
+
+$x_{i,j}$: Número de bicicletas da categoria $j$ a serem movidas da área de origem para a área de destino $i$;
+
+$i$: Área de destino;
+
+$j$: Categoria da bicicleta;
+
+$a_j$: Disponibilidade de bicicletas na área de origem da categoria $j$;
+
+$s_j$: Espaço que a bicicleta de categoria $j$ ocupa no caminhão.
+
+Temos uma restrição de não-negatividade:
+
+$x_{i,j} \geq 0$  $\forall i,j$.
+
+Seja $T$ a capacidade máxima do caminhão tal que:
+
+$\sum_i \sum_j x_{i,j} \times s_j \leq T$.
+
+A função objetivo para o problema será dada por:
+
+
 
 ### 2 .
 
