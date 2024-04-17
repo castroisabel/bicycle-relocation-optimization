@@ -94,7 +94,7 @@ Disponível no arquivo: *src/solver.py* e *notebooks/03.modeling.ipynb*
 
 Solução ótima:
 
-$ x_{i,j} = \begin{pmatrix}
+$x_{i,j} = \begin{bmatrix}
 1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\\
 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\\
 69.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 \\\
@@ -102,7 +102,7 @@ $ x_{i,j} = \begin{pmatrix}
 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\\
 0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 \\\
 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
-\end{pmatrix} $
+\end{bmatrix} $
 
 Valor objetivo ótimo: $4358.7834$
 
