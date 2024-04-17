@@ -110,8 +110,10 @@ Valor objetivo ótimo: $4358.7834$
 
 ![capacity](data/results/truck_capacity.png)
 
-### 2 .
+### 2. Resolvendo com algoritmos:
 
-### 3 .
+**a)** Voltando à tarefa 1, imagine o mesmo problema, mas sem as restrições referentes à capacidade do caminhão. Ao fazer isso, a otimização pode assumir que o caminhão tem capacidade ilimitada e ignorar a verificação disso. Sabendo disso, implemente um algoritmo que encontre uma boa solução para este problema. É preferível (mas não obrigatório) que seu algoritmo sempre encontre uma solução ótima, tendo o menor tempo e complexidade de espaço possível. Mostre seu código, a melhor solução encontrada e seu valor objetivo.
 
-### 4 .
+### 3 . Indo além na tarefa 2 (problema sem a restrição de capacidade).
+
+### 4 . Indo mais além no negócio.
