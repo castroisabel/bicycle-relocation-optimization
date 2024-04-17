@@ -1,6 +1,6 @@
 import pyomo.environ as pyEnv
 
-def relocate_bicycles(matrix, a, s, T):
+def relocate_bicycles(matrix, a, s, T, show_results=True):
     model = pyEnv.ConcreteModel()
 
     # índices para as áreas, categorias e bicicletas
@@ -28,7 +28,7 @@ def relocate_bicycles(matrix, a, s, T):
 
     model.capacity_constraint = pyEnv.Constraint(rule=capacity_constraint)
 
-    # adicionar restrição condicional
+    # restrição condicional
     def sequential_constraint_rule(model, i, j, k):
         if k == 0:
             return pyEnv.Constraint.Skip
@@ -40,15 +40,17 @@ def relocate_bicycles(matrix, a, s, T):
     # resolver o modelo
     solver = pyEnv.SolverFactory('glpk')
     results = solver.solve(model)
-
-    print("Status:", results.solver.termination_condition)
-    print("Valor objetivo ótimo (Lucro esperado):", pyEnv.value(model.profit))
-
-    print("\nSolução ótima:")
+    
+    # solução final
     sum_x = [[sum(model.x[i, j, k].value for k in model.K) for j in model.J] for i in model.I]
-    for i in model.I:
-        for j in model.J:
-            if sum_x[i][j] != 0:
-                print(f"Número de bicicletas da categoria {j + 1} a serem movidas para a área {i + 1}: {sum_x[i][j]}")
+
+    if show_results == True:
+        print("Status:", results.solver.termination_condition)
+        print("Valor objetivo ótimo (Lucro esperado):", pyEnv.value(model.profit))
+        print("\nSolução ótima:")
+        for i in model.I:
+            for j in model.J:
+                if sum_x[i][j] != 0:
+                    print(f"Número de bicicletas da categoria {j + 1} a serem movidas para a área {i + 1}: {sum_x[i][j]}")
 
     return pyEnv.value(model.profit), sum_x
