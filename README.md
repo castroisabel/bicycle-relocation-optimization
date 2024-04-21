@@ -126,24 +126,32 @@ Disponível no arquivo: `src/algorithm.py` e `notebooks/05.heuristic.ipynb`
 Solução ótima:
 
 $x_{i,j} = \begin{bmatrix}
-0.0 & 6.0 & 7.0 & 0.0 & 0.0 & 1.0 \\\
 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\\
-91.0 & 92.0 & 109.0 & 93.0 & 104.0 & 105.0 \\\
-103.0 & 97.0 & 75.0 & 105.0 & 108.0 & 109.0 \\\
 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\\
-78.0 & 75.0 & 88.0 & 69.0 & 70.0 & 64.0 \\\
+91.0 & 92.0 & 111.0 & 93.0 & 100.0 & 106.0 \\\
+103.0 & 97.0 & 75.0 & 103.0 & 101.0 & 109.0 \\\
+0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\\
+78.0 & 81.0 & 93.0 & 71.0 & 81.0 & 64.0 \\\
 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
 \end{bmatrix} $
 
-Valor objetivo ótimo: $78606.0191$.
+Valor objetivo ótimo: $78636.7606$.
 
 **b)** Qual é a complexidade de tempo do seu algoritmo? Qual é a complexidade do espaço auxiliar do seu algoritmo?
 
 **R:**
 
+A complexidade de tempo do algoritmo de Simulated Annealing (`simulated_annealing()`) é depende principalmente do número de iterações estabelecidas inicialmente, denominado como $NI$, e portanto possui complexidade de tempo $O(NI)$. Dentro da função, há a chamada para a função `obj_function()` que calcula o lucro esperado e depende da quantidade de áreas $M$ e o número de categorias de bicicletas $N$, portanto $O(N \times M)$.
+
+A função `generate_neighbor()` possui complexidade de tempo $O(1)$, pois executa um número fixo de operações, e a função `sum_supplies()` possui complexidade de tempo $O(M)$, pois percorre todas as categorias.
+
+Ao final temos a complexidade de tempo: $O(NI) * O(N \times M)$
+
 **c)** O algoritmo que você propôs na letra **a)** sempre encontrará uma solução ótima, independentemente da entrada? Como?
 
-**R**: Não. O Simulated Annealing é um algoritmo que pode encontrar soluções boas para problemas de otimização, mas não garante a solução ótima em todos os casos. O algoritmo faz escolhas aleatórias durante sua execução e pode aceitar soluções piores com uma certa probabilidade, o que permite explorar mais completamente o espaço de soluções em busca de soluções melhores.
+**R**: 
+
+Não. O Simulated Annealing é um algoritmo que pode encontrar soluções boas para problemas de otimização, mas não garante a solução ótima em todos os casos. O algoritmo faz escolhas aleatórias durante sua execução e pode aceitar soluções piores com uma certa probabilidade, o que permite explorar mais completamente o espaço de soluções em busca de soluções melhores.
 
 **d)** Ao analisar os dados de entrada, quais tarefas de pré-processamento podem ser feitas para esta instância a fim de torná-la mais rápida ou mais leve para ser resolvida?
 
