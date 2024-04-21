@@ -1,5 +1,14 @@
 # Processo seletivo - Mercado Livre
 
+## Candidato: 
+Isabel de Castro Beneyto
+
+LinkedIn: https://www.linkedin.com/in/castro-isabel/
+
+GitHub: https://github.com/castroisabel
+
+Email: icastrocordeiro@gmail.com e castrobeneyto@gmail.com
+
 ## Desafio: Relocação de Bicicletas
 
 ### Introdução
