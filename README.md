@@ -145,7 +145,9 @@ A complexidade de tempo do algoritmo de Simulated Annealing (`simulated_annealin
 
 A função `generate_neighbor()` possui complexidade de tempo $O(1)$, pois executa um número fixo de operações, e a função `sum_supplies()` possui complexidade de tempo $O(M)$, pois percorre todas as categorias.
 
-Ao final temos a complexidade de tempo: $O(NI) * O(N \times M)$
+Porém em `obj_function()` e `sum_supplies()` utilizamos a função nativa do python `sum()` que possui complexidade $O(K)$, onde $K$ é o número de bicicletas alocadas.
+
+Ao final temos a complexidade de tempo: $O(NI) \times O(N \times M) \times O(K)$
 
 **c)** O algoritmo que você propôs na letra **a)** sempre encontrará uma solução ótima, independentemente da entrada? Como?
 
@@ -157,7 +159,7 @@ Não. O Simulated Annealing é um algoritmo que pode encontrar soluções boas p
 
 **R:**
 
-Uma estratégia de pré-processamento que poderia ser explorada para os lucros esperados é substituir o fornecimento do lucro esperado para a alocação da $k$-ésima bicicleta pelo valor do lucro esperado acumulado para as $k$ primeiras bicicletas alocadas em uma área específica $i$ e categoria $j$. 
+Uma estratégia de pré-processamento que poderia ser explorada para os lucros esperados é substituir o fornecimento do lucro esperado para a alocação da $k$-ésima bicicleta pelo valor do lucro esperado acumulado para as $k$ primeiras bicicletas alocadas em uma área específica $i$ e categoria $j$. Assim, evitariamos ter que realizar a soma dos lucros esperados em cada iteração.
 
 ### 3 . Indo além na tarefa 2 (problema sem a restrição de capacidade).
 

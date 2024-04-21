@@ -1,6 +1,6 @@
 import numpy as np
 
-
+# lucro total esperado
 def obj_function(solution, areas):
     profit = np.zeros_like(solution)
     for i, area in enumerate(areas):
@@ -8,14 +8,14 @@ def obj_function(solution, areas):
             profit[i][j] = sum(area[column][:int(solution[i][j])])
     return profit.sum()
 
-
+# restrição de disponibilidade
 def sum_supplies(solution, supplies):
     sum = 0
     for categorie, supply in enumerate(supplies):
         sum+=int(solution[:,categorie].sum() > supply)
     return sum
 
-
+# pertubação na vizinhança
 def generate_neighbor(solution):
     area1 = np.random.randint(0, solution.shape[0])
     area2 = np.random.randint(0, solution.shape[0])
@@ -31,7 +31,7 @@ def generate_neighbor(solution):
 
     return np.clip(neighbor_solution, 0, None)
 
-
+# algoritmo simulated annealing
 def simulated_annealing(initial_solution, initial_temperature, cooling_rate, num_iterations, areas, supplies):
     current_solution = initial_solution
     current_temperature = initial_temperature

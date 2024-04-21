@@ -41,7 +41,7 @@ def relocate_bicycles(matrix, a, s, T, show_results=True):
     model.sequential_constraint = pyEnv.Constraint(model.I, model.J, model.K, rule=sequential_constraint_rule)
 
     # resolver o modelo
-    solver = pyEnv.SolverFactory('glpk')
+    solver = pyEnv.SolverFactory('glpk') # GLPK solver
     results = solver.solve(model)
     
     # solução final
